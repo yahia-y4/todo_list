@@ -8,8 +8,8 @@ namespace ToDoApp.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<ToDoTask> ToDoTasks { get; set; }
-        public DbSet<Section> Sections{ get; set; }
+        public DbSet<User> Users { get; set; } =null!;
+        public DbSet<ToDoTask> ToDoTasks { get; set; } =null!;
+        public DbSet<Section> Sections{ get; set; }=null!;
     }
 }
