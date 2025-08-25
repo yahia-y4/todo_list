@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace backend.Migrations
 {
-    /// <inheritdoc />
-    public partial class InitMigration : Migration
+    public partial class InitialCreate : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -32,6 +30,7 @@ namespace backend.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    createDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -54,7 +53,6 @@ namespace backend.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     completed = table.Column<bool>(type: "bit", nullable: false),
-                    EndTask = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SectionId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -86,7 +84,6 @@ namespace backend.Migrations
                 unique: true);
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

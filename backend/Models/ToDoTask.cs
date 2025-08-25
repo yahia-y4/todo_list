@@ -17,14 +17,12 @@ namespace ToDoApp.Models
 
         public bool completed { get; set; } = false;
 
-        public DateTime? EndTask { get; set; } = null;
-
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
         public int SectionId { get; set; }
-        public int UserId { get; set; }
-
         public Section Section { get; set; } = null!;
-        public User User { get; set; } = null!;
+
+
+   
     }
 }

@@ -11,7 +11,6 @@ namespace ToDoApp.Models
         public string Password { get; set; } = "";
 
         public List<Section> Sections { get; set; } = new();
-        public List<ToDoTask> ToDoTasks { get; set; } = new();
-
+       
     }
 }
